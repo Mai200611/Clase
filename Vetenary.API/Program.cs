@@ -1,14 +1,11 @@
 using Microsoft.EntityFrameworkCore;
-using Vetenary.API.Data;
+using Veterinary.API.Data;
+
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddSwaggerGen();
 
-// Add services to the container.
-
-builder.Services.AddControllers();
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
-IServiceCollection Datacontext = builder.Services.AddDbContext<Datacontext>(x => x.UseSqlServer("name=DefaultConnection"));
+builder.Services.AddDbContext<Datacontext>(x => x.UseSqlServer("name=DefaultConnection"));
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
