@@ -1,0 +1,6 @@
+@Vetenary.API_HostAddress = http://localhost:5062
+
+GET {{Vetenary.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
